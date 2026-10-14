@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>プロセカ リンクまとめ（自動更新版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3fbfb; --surface:#ffffff; --text:#12303a; --muted:#52707a; --line:#cfe6e8;
+  --miku:#33ccbb; --miku-ink:#0b6b62;
+  --u1:#4455dd; --u2:#88dd44; --u3:#ee1166; --u4:#ff9900; --u5:#884499;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1f27; --surface:#16303b; --text:#e9f7f7; --muted:#9bbcc4; --line:#27495a;
+    --miku-ink:#6fe6d9;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1f27; --surface:#16303b; --text:#e9f7f7; --muted:#9bbcc4; --line:#27495a;
+  --miku-ink:#6fe6d9;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+  font-weight:500; line-height:1.8;
+}
+.stripe{display:flex;height:10px}
+.stripe i{flex:1}
+.stripe i:nth-child(1){background:var(--u1)}
+.stripe i:nth-child(2){background:var(--u2)}
+.stripe i:nth-child(3){background:var(--u3)}
+.stripe i:nth-child(4){background:var(--u4)}
+.stripe i:nth-child(5){background:var(--u5)}
+main{max-width:880px;margin:0 auto;padding:56px 20px 40px}
+h1{
+  margin:0 0 12px; font-weight:900; line-height:1.15;
+  font-size:clamp(2.4rem,9vw,4.6rem); letter-spacing:.01em;
+}
+.lead{margin:0 0 44px;color:var(--muted);max-width:34em}
+.list{display:grid;gap:18px}
+.panel{
+  display:grid; grid-template-columns:14px 1fr; background:var(--surface);
+  border:1px solid var(--line); border-radius:18px; overflow:hidden;
+  color:inherit; text-decoration:none;
+}
+.panel .band{background:var(--c)}
+.panel .body{padding:22px 24px 24px}
+.panel h2{margin:0 0 2px;font-size:1.35rem;font-weight:900;line-height:1.4}
+.panel .host{margin:0 0 10px;color:var(--muted);font-size:.85rem;word-break:break-all}
+.panel p{margin:0 0 16px;max-width:36em}
+.btn{
+  display:inline-block; padding:9px 20px; border-radius:999px; font-weight:700;
+  background:var(--c); color:#fff; font-size:.95rem;
+}
+.panel:hover{border-color:var(--c)}
+.panel:hover .btn{filter:brightness(1.08)}
+.panel:focus-visible{outline:3px solid var(--c);outline-offset:3px}
+.p1{--c:var(--miku)} .p1 .btn{color:#06322d}
+.p2{--c:var(--u3)}
+.p3{--c:var(--u1)}
+.p4{--c:var(--u4)}
+footer{max-width:880px;margin:0 auto;padding:8px 20px 56px;color:var(--muted);font-size:.85rem}
+footer p{margin:0 0 4px}
+@media (prefers-reduced-motion:no-preference){
+  .panel,.btn{transition:border-color .15s, filter .15s}
+}
+
+.feeds{display:grid;gap:18px;margin-top:44px}
+.feeds h2{margin:0 0 10px;font-size:1.35rem;font-weight:900}
+.feed{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 22px 22px}
+.feed .note{margin:0 0 14px;color:var(--muted);font-size:.85rem}
+.video{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.xwrap{max-height:640px;overflow:auto;border-radius:12px}
+.fallback{margin:0;color:var(--muted);font-size:.9rem}
+@media (min-width:860px){.feeds{grid-template-columns:1fr 1fr;align-items:start}}
+
+.news{margin-top:44px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 24px 24px}
+.news h2{margin:0 0 4px;font-size:1.35rem;font-weight:900}
+.news .asof{margin:0 0 14px;color:var(--muted);font-size:.85rem}
+.news ul{list-style:none;margin:0;padding:0}
+.news li{display:grid;grid-template-columns:5.2em 1fr;gap:2px 14px;padding:12px 0;border-top:1px solid var(--line)}
+.news time{font-weight:900;color:var(--miku-ink)}
+.news a{color:inherit;font-weight:700;text-underline-offset:3px}
+.news a:focus-visible{outline:3px solid var(--miku);outline-offset:2px}
+.news .src{display:block;color:var(--muted);font-size:.8rem}
+.news p.d{margin:0}
+@media (max-width:520px){.news li{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="stripe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<main>
+  <h1>プロセカ<br>リンクまとめ</h1>
+  <p class="lead">『プロジェクトセカイ カラフルステージ！ feat. 初音ミク』の公式サイト、YouTube、X（2アカウント）をここから開けます。</p>
+
+  <div class="list">
+    <a class="panel p1" href="https://pjsekai.sega.jp/" target="_blank" rel="noopener noreferrer">
+      <span class="band"></span>
+      <span class="body">
+        <h2>公式サイト</h2>
+        <p class="host">pjsekai.sega.jp</p>
+        <p>ゲームの紹介やお知らせなど、最新の公式情報を確認できます。</p>
+        <span class="btn">公式サイトを開く</span>
+      </span>
+    </a>
+
+    <a class="panel p2" href="https://www.youtube.com/channel/UCdMGYXL38w6htx6Yf9YJa-w" target="_blank" rel="noopener noreferrer">
+      <span class="band"></span>
+      <span class="body">
+        <h2>YouTube 公式チャンネル</h2>
+        <p class="host">youtube.com/channel/UCdMGYXL38w6htx6Yf9YJa-w</p>
+        <p>PVやMV、ライブ映像などの公式動画を視聴できます。</p>
+        <span class="btn">YouTubeを開く</span>
+      </span>
+    </a>
+
+    <a class="panel p3" href="https://x.com/pj_sekai" target="_blank" rel="noopener noreferrer">
+      <span class="band"></span>
+      <span class="body">
+        <h2>X 公式アカウント（@pj_sekai）</h2>
+        <p class="host">x.com/pj_sekai</p>
+        <p>イベントやガチャ、キャンペーンなどの速報をチェックできます。</p>
+        <span class="btn">Xを開く</span>
+      </span>
+    </a>
+
+    <a class="panel p4" href="https://x.com/pjsekai_live" target="_blank" rel="noopener noreferrer">
+      <span class="band"></span>
+      <span class="body">
+        <h2>X ライブ情報アカウント（@pjsekai_live）</h2>
+        <p class="host">x.com/pjsekai_live</p>
+        <p>ライブやイベントに関する情報をチェックできます。</p>
+        <span class="btn">Xを開く</span>
+      </span>
+    </a>
+  </div>
+
+  <section class="news" aria-label="最新情報">
+    <h2>最新情報</h2>
+    <p class="asof">2026年10月14日時点で確認した内容です。</p>
+    <ul>
+      <li><time>10/13</time><div><a href="https://prtimes.jp/main/html/rd/p/000007752.000005397.html" target="_blank" rel="noopener noreferrer">「6th Anniversary 感謝祭」グッズの事後物販が開始</a><p class="d">セガストア オンラインと全国のアニメイト各店・通販で販売中です。</p><span class="src">セガ プレスリリース</span></div></li>
+      <li><time>10/12</time><div><a href="https://nijimen.kusuguru.co.jp/topics/639959" target="_blank" rel="noopener noreferrer">あばらや書き下ろしの新曲『星、ときどき光』が追加</a><p class="d">同日からゲーム内イベント「Stars Off Orbit」と「Soundless Seaガチャ」(10/21 11:59まで)も開催中です。</p><span class="src">にじめん</span></div></li>
+      <li><time>10/21〜</time><div><a href="https://www.sega.jp/topics/detail/260925_8/" target="_blank" rel="noopener noreferrer">イベント「Vivid BAD SQUAD Memories」を開催予定</a><p class="d">10/23 12時からは、コネクトライブ「GO Hoppin’Parade」の前日譚となるログインストーリーも公開予定です。</p><span class="src">セガ 公式トピックス</span></div></li>
+      <li><time>10/21〜</time><div><a href="https://cho-animedia.jp/article/2026/10/14/63904.html" target="_blank" rel="noopener noreferrer">ココスとのコラボイベントが開催</a><p class="d">限定メニューやグッズが登場し、限定缶バッジの販売は10/21 10時からです。</p><span class="src">超!アニメディア</span></div></li>
+      <li><time>10/3-4</time><div><a href="https://pjsekai.sega.jp/6thanniversarythanksfestival/index.html" target="_blank" rel="noopener noreferrer">「6th Anniversary 感謝祭」を東京体育館で開催</a><p class="d">朗読劇や「6th Anniversary Special Live」が行われました。</p><span class="src">公式サイト</span></div></li>
+      <li><time>10/1</time><div><a href="https://x.com/pj_sekai/status/2105494935629873439" target="_blank" rel="noopener noreferrer">「今月のプロセカスケジュール」で10月のイベント・楽曲追加日を公開</a><p class="d">月ごとのスケジュールがまとまった画像が投稿されています。</p><span class="src">公式X @pj_sekai</span></div></li>
+    </ul>
+  </section>
+
+  <section class="feeds" aria-label="最新情報">
+    <div class="feed">
+      <h2>YouTube 最新動画</h2>
+      <p class="note">公式チャンネルの投稿が新しい順に自動で並びます。</p>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=UUdMGYXL38w6htx6Yf9YJa-w"
+          title="プロジェクトセカイ公式YouTubeチャンネルの最新動画" loading="lazy"
+          allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="feed">
+      <h2>X 最新ポスト</h2>
+      <p class="note">@pj_sekai の最新ポストが自動で表示されます。</p>
+      <div class="xwrap" id="xwrap">
+        <a class="twitter-timeline" data-height="600" data-chrome="noheader nofooter transparent"
+           href="https://twitter.com/pj_sekai?ref_src=twsrc%5Etfw">@pj_sekai のポスト</a>
+        <p class="fallback">表示されない場合は <a href="https://x.com/pj_sekai" target="_blank" rel="noopener noreferrer">Xで直接開いてください</a>。</p>
+      </div>
+    </div>
+    <div class="feed">
+      <h2>X ライブ情報（@pjsekai_live）</h2>
+      <p class="note">@pjsekai_live の最新ポストが自動で表示されます。</p>
+      <div class="xwrap">
+        <a class="twitter-timeline" data-height="600" data-chrome="noheader nofooter transparent"
+           href="https://twitter.com/pjsekai_live?ref_src=twsrc%5Etfw">@pjsekai_live のポスト</a>
+        <p class="fallback">表示されない場合は <a href="https://x.com/pjsekai_live" target="_blank" rel="noopener noreferrer">Xで直接開いてください</a>。</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>このページは非公式のリンク集です。最新の情報は各公式サイトでご確認ください。</p>
+  <p>© SEGA / Colorful Palette Inc. / Crypton Future Media, INC.</p>
+</footer>
+<script>
+(function(){
+  var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  document.querySelectorAll('.twitter-timeline').forEach(function(a){a.setAttribute('data-theme', dark ? 'dark' : 'light');});
+  var s = document.createElement('script');
+  s.src = 'https://platform.twitter.com/widgets.js'; s.async = true; s.charset = 'utf-8';
+  document.body.appendChild(s);
+})();
+</script>
+</body>
+</html>
